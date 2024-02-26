@@ -1,0 +1,34 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+export PS1='\[\e[34;1m\][\u@\h\[\e[33;1m\] \w]\$ \[\e[m\]'
+alias vi='/usr/bin/vim'
+alias tree='env LANG=C tree'
+alias grep='grep --color=auto -i'
+alias df='df -hT'
+alias pps='ps -ef | head -1 ; ps -ef | grep $1'
+alias c='clear'
+alias ls='ls --color=auto -h -F'
+alias pps='ps -ef | head -1; ps -ef | grep $1'
+alias df='df -T -h'
+alias fwcmd='firewall-cmd --permanent'
+alias fwreload='firewall-cmd --reload'
+alias fwlist='firewall-cmd --list-all'
+#
+# DNS Server Alias
+#
+alias named.conf='vi /etc/named.conf'
+alias named.rfc1912.zones='vi /etc/named.rfc1912.zones' 
+alias DNS='cd /var/named'
+alias dnslog='tail -f /var/log/messages'
+
+[[  ${BLE_VERSION-} ]] && ble-attach
